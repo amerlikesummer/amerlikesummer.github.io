@@ -216,6 +216,63 @@
       color: var(--muted);
     }
 
+    /* ── Portfolio/Writing ── */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .portfolio-category { margin-bottom: 0.5rem; }
+    .portfolio-card {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    a.portfolio-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.09);
+      text-decoration: none;
+    }
+    .card-stripe { height: 4px; flex-shrink: 0; }
+    .card-body {
+      padding: 0.75rem 0.9rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-pub {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.63rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+    .card-title {
+      font-style: italic;
+      font-size: 0.88rem;
+      line-height: 1.4;
+      flex: 1;
+    }
+    .card-date {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.67rem;
+      color: var(--muted);
+      margin-top: 0.45rem;
+    }
+    @media (max-width: 700px) {
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .portfolio-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── Word Board ── */
     .word-board-form {
       display: flex;
@@ -304,6 +361,7 @@
   <ul>
     <li><a href="#about">About</a></li>
     <li><a href="#research">Research</a></li>
+    <li><a href="#writing">Writing</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="cv.pdf" target="_blank">CV</a></li>
   </ul>
@@ -370,7 +428,7 @@
     </p>
     <p>
       Outside of my research, I love modern and contemporary art (especially at the
-      Broad!), 8 and 9 ball pool, baking custards, niche herbal teas, and long TV series where the protagonists
+      Broad!), baking custard-based desserts, and long TV series where the protagonists
       always win. More than anything else, I love learning languages. Please drop a
       word from a language you speak below!
     </p>
@@ -417,6 +475,246 @@
         <li>Gulf Coast Undergraduate Research Seminar (November 2024), Talk — <strong>Outstanding Session Presentation, Computational Applied Mathematics and Operations Research</strong></li>
       </ul>
     </div>
+  </section>
+
+  <!-- Writing -->
+  <section id="writing">
+    <h2>Writing</h2>
+
+    <div class="portfolio-category">
+      <p class="papers-label">Social Science</p>
+      <div class="portfolio-grid">
+
+        <!-- 2022 -->
+        <a class="portfolio-card" href="https://sites.lsa.umich.edu/mje/2022/04/16/in-defense-of-rationality/" target="_blank">
+          <div class="card-stripe" style="background:#1a5c38"></div>
+          <div class="card-body">
+            <div class="card-pub" style="color:#1a5c38">Michigan Journal of Economics</div>
+            <div class="card-title">In Defense of Rationality</div>
+            <div class="card-date">2022</div>
+          </div>
+        </a>
+
+        <a class="portfolio-card" href="https://sites.lsa.umich.edu/mje/2022/01/13/neuroeconomics-the-chemistry-of-rationality/" target="_blank">
+          <div class="card-stripe" style="background:#1a5c38"></div>
+          <div class="card-body">
+            <div class="card-pub" style="color:#1a5c38">Michigan Journal of Economics</div>
+            <div class="card-title">Neuroeconomics: The Chemistry of Rationality</div>
+            <div class="card-date">2022</div>
+          </div>
+        </a>
+
+        <a class="portfolio-card" href="https://backend.production.deepblue-documents.lib.umich.edu/server/api/core/bitstreams/02668d5e-ce15-465f-afdd-8bb17732778e/content" target="_blank">
+          <div class="card-stripe" style="background:#1a4a8c"></div>
+          <div class="card-body">
+            <div class="card-pub" style="color:#1a4a8c">DeepBlue Repository</div>
+            <div class="card-title">An Exploration in Mathematical Cartography: Comparative Distortion</div>
+            <div class="card-date">March 2022</div>
+          </div>
+        </a>
+
+        <!-- 2023 -->
+        <a class="portfolio-card" href="https://www.mjia.org/articles/the-colombiavenezuela-border-reopening-was-it-worth-it" target="_blank">
+          <div class="card-stripe" style="background:#c17f24"></div>
+          <div class="card-body">
+            <div class="card-pub" style="color:#c17f24">Michigan Journal of International Affairs</div>
+            <div class="card-title">The Colombia/Venezuela Border Reopening: Was it Worth It?</div>
+            <div class="card-date">2023</div>
+          </div>
+        </a>
+
+        <a class="portfolio-card" href="https://acrobat.adobe.com/link/review?uri=urn%3Aaaid%3Ascds%3AUS%3Aa9e7777e-ef7d-3dc1-8231-040ad76a6201" target="_blank">
+          <div class="card-stripe" style="background:#6b2d8c"></div>
+          <div class="card-body">
+            <div class="card-pub" style="color:#6b2d8c">Michigan Undergraduate Law Review</div>
+            <div class="card-title">I'm Going to Steal the Moon: Evaluating the Protection of the Common Heritage of Mankind</div>
+            <div class="card-date">2023 · p. 35</div>
+          </div>
+        </a>
+
+        <a class="portfolio-card" href="https://static1.squarespace.com/static/61997b8dadabbc4b6fc4a41b/t/646ff4c5a4720b33e480324a/1685058766414/Final+WN23+MJIA.pdf" target="_blank">
+          <div class="card-stripe" style="background:#c17f24"></div>
+          <div class="card-body">
+            <div class="card-pub" style="color:#c17f24">Michigan Journal of International Affairs</div>
+            <div class="card-title">What You Think You Know (But Really Don't) About Tax Havens</div>
+            <div class="card-date">2023 · pp. 18–19</div>
+          </div>
+        </a>
+
+        <a class="portfolio-card" href="https://acrobat.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3A725497d4-7ac7-47f1-a949-59d450b46d13" target="_blank">
+          <div class="card-stripe" style="background:#6b2d8c"></div>
+          <div class="card-body">
+            <div class="card-pub" style="color:#6b2d8c">Michigan Undergraduate Law Review</div>
+            <div class="card-title">A Mathematical Characterization of Some Judicial Philosophies</div>
+            <div class="card-date">2023 · p. 63</div>
+          </div>
+        </a>
+
+        <!-- 2024 -->
+        <a class="portfolio-card" href="https://sites.lsa.umich.edu/mje/2024/04/15/its-complicated/" target="_blank">
+          <div class="card-stripe" style="background:#1a5c38"></div>
+          <div class="card-body">
+            <div class="card-pub" style="color:#1a5c38">Michigan Journal of Economics</div>
+            <div class="card-title">It's Complicated</div>
+            <div class="card-date">2024</div>
+          </div>
+        </a>
+
+        <a class="portfolio-card" href="https://static1.squarespace.com/static/61997b8dadabbc4b6fc4a41b/t/65cff62dcfb16f5e55c7a1ff/1708127798009/MJIA-F2023-SERPENTINE.pdf" target="_blank">
+          <div class="card-stripe" style="background:#c17f24"></div>
+          <div class="card-body">
+            <div class="card-pub" style="color:#c17f24">Michigan Journal of International Affairs</div>
+            <div class="card-title">Scripta Non Manent</div>
+            <div class="card-date">2024 · p. 15</div>
+          </div>
+        </a>
+
+        <a class="portfolio-card" href="https://www.mjia.org/articles/scripta-non-manent" target="_blank">
+          <div class="card-stripe" style="background:#c17f24"></div>
+          <div class="card-body">
+            <div class="card-pub" style="color:#c17f24">Michigan Journal of International Affairs</div>
+            <div class="card-title">Scripta Non Manent <em style="font-style:normal; opacity:0.7">(full version)</em></div>
+            <div class="card-date">2024</div>
+          </div>
+        </a>
+
+        <a class="portfolio-card" href="https://static1.squarespace.com/static/61997b8dadabbc4b6fc4a41b/t/66e19246f6bd0a1392e566f6/1726059084739/MJIA+W24+Issue+FINAL+COPY.pdf" target="_blank">
+          <div class="card-stripe" style="background:#c17f24"></div>
+          <div class="card-body">
+            <div class="card-pub" style="color:#c17f24">Michigan Journal of International Affairs</div>
+            <div class="card-title">Make Room, Dutch! Sranan Tongo as an Official Language of Suriname</div>
+            <div class="card-date">2024 · p. 21</div>
+          </div>
+        </a>
+
+        <!-- 2025 -->
+        <a class="portfolio-card" href="https://www.michigandaily.com/news/focal-point/former-smtd-professor-alleges-provosts-misconduct-throughout-his-tenure-review-daily-investigation-finds/" target="_blank">
+          <div class="card-stripe" style="background:#0d7377"></div>
+          <div class="card-body">
+            <div class="card-pub" style="color:#0d7377">The Michigan Daily — Investigative</div>
+            <div class="card-title">Former SMTD Professor Alleges Provost's Misconduct Throughout His Tenure Review, Daily Investigation Finds</div>
+            <div class="card-date">2025</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="portfolio-category">
+      <p class="papers-label" style="margin-top:1.5rem">News</p>
+      <div class="portfolio-grid">
+
+        <a class="portfolio-card" href="https://www.michigandaily.com/news/sacua-talks-availability-of-meeting-minutes-faculty-childcare/" target="_blank">
+          <div class="card-stripe" style="background:#00274C"></div>
+          <div class="card-body">
+            <div class="card-pub" style="color:#00274C">The Michigan Daily</div>
+            <div class="card-title">SACUA Talks Availability of Meeting Minutes, Faculty Childcare</div>
+            <div class="card-date">November 7, 2022</div>
+          </div>
+        </a>
+
+        <a class="portfolio-card" href="https://www.michigandaily.com/research/international-research-study-finds-new-genetic-links-to-heart-disease/" target="_blank">
+          <div class="card-stripe" style="background:#00274C"></div>
+          <div class="card-body">
+            <div class="card-pub" style="color:#00274C">The Michigan Daily</div>
+            <div class="card-title">International Research Study Finds New Genetic Links to Heart Disease</div>
+            <div class="card-date">January 11, 2023</div>
+          </div>
+        </a>
+
+        <a class="portfolio-card" href="https://www.michigandaily.com/news/research/infectious-diseases-covid-19-rsv-influenza-still-prevalent-on-campus/" target="_blank">
+          <div class="card-stripe" style="background:#00274C"></div>
+          <div class="card-body">
+            <div class="card-pub" style="color:#00274C">The Michigan Daily</div>
+            <div class="card-title">Infectious Diseases Covid-19, RSV, Influenza Still Prevalent on Campus</div>
+            <div class="card-date">January 24, 2023</div>
+          </div>
+        </a>
+
+        <a class="portfolio-card" href="https://www.michigandaily.com/research/what-does-umich-do-with-its-particle-accelerator/" target="_blank">
+          <div class="card-stripe" style="background:#00274C"></div>
+          <div class="card-body">
+            <div class="card-pub" style="color:#00274C">The Michigan Daily</div>
+            <div class="card-title">What Does UMich Do With Its Particle Accelerator?</div>
+            <div class="card-date">February 6, 2023</div>
+          </div>
+        </a>
+
+        <a class="portfolio-card" href="https://www.michigandaily.com/research/behind-the-%e2%82%bf-foundations-of-cryptocurrency/" target="_blank">
+          <div class="card-stripe" style="background:#00274C"></div>
+          <div class="card-body">
+            <div class="card-pub" style="color:#00274C">The Michigan Daily</div>
+            <div class="card-title">Behind the ₿: Foundations of Cryptocurrency</div>
+            <div class="card-date">March 22, 2023</div>
+          </div>
+        </a>
+
+        <a class="portfolio-card" href="https://www.michigandaily.com/research/the-abcs-of-umich-oncology-activism-bioinformatics-collaboration/" target="_blank">
+          <div class="card-stripe" style="background:#00274C"></div>
+          <div class="card-body">
+            <div class="card-pub" style="color:#00274C">The Michigan Daily</div>
+            <div class="card-title">The ABCs of UMich Oncology: Activism, Bioinformatics, Collaboration</div>
+            <div class="card-date">March 29, 2023</div>
+          </div>
+        </a>
+
+        <a class="portfolio-card" href="https://www.michigandaily.com/research/umich-perspectives-how-are-we-dealing-with-ai/" target="_blank">
+          <div class="card-stripe" style="background:#00274C"></div>
+          <div class="card-body">
+            <div class="card-pub" style="color:#00274C">The Michigan Daily</div>
+            <div class="card-title">UMich Perspectives: How Are We Dealing with AI?</div>
+            <div class="card-date">April 9, 2023</div>
+          </div>
+        </a>
+
+        <a class="portfolio-card" href="https://www.michigandaily.com/news/administration/geo-continues-strike-grading-plans-remain-in-flux/" target="_blank">
+          <div class="card-stripe" style="background:#00274C"></div>
+          <div class="card-body">
+            <div class="card-pub" style="color:#00274C">The Michigan Daily</div>
+            <div class="card-title">GEO Continues Strike, Grading Plans Remain in Flux</div>
+            <div class="card-date">April 30, 2023</div>
+          </div>
+        </a>
+
+        <a class="portfolio-card" href="https://www.michigandaily.com/research/umich-becomes-first-major-university-to-develop-its-own-generative-ai/" target="_blank">
+          <div class="card-stripe" style="background:#00274C"></div>
+          <div class="card-body">
+            <div class="card-pub" style="color:#00274C">The Michigan Daily</div>
+            <div class="card-title">UMich Becomes First Major University to Develop Its Own Generative AI</div>
+            <div class="card-date">September 21, 2023</div>
+          </div>
+        </a>
+
+        <a class="portfolio-card" href="https://www.michigandaily.com/research/umich-chosen-to-lead-30-million-complex-particle-research-center/" target="_blank">
+          <div class="card-stripe" style="background:#00274C"></div>
+          <div class="card-body">
+            <div class="card-pub" style="color:#00274C">The Michigan Daily</div>
+            <div class="card-title">UMich Chosen to Lead $30 Million Complex Particle Research Center</div>
+            <div class="card-date">September 27, 2023</div>
+          </div>
+        </a>
+
+        <a class="portfolio-card" href="https://www.michigandaily.com/research/september-lab-spotlight-kamcev-research-laboratory/" target="_blank">
+          <div class="card-stripe" style="background:#00274C"></div>
+          <div class="card-body">
+            <div class="card-pub" style="color:#00274C">The Michigan Daily</div>
+            <div class="card-title">September Lab Spotlight: Kamcev Research Laboratory</div>
+            <div class="card-date">October 1, 2023</div>
+          </div>
+        </a>
+
+        <a class="portfolio-card" href="https://www.michigandaily.com/research/one-for-the-books-how-umich-libraries-have-become-more-than-just-places-to-read/" target="_blank">
+          <div class="card-stripe" style="background:#00274C"></div>
+          <div class="card-body">
+            <div class="card-pub" style="color:#00274C">The Michigan Daily</div>
+            <div class="card-title">One for the Books: How UMich Libraries Have Become More Than Just Places to Read</div>
+            <div class="card-date">March 8, 2023</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
   </section>
 
   <!-- Contact -->
