@@ -757,12 +757,7 @@
     { bg: '#f1f8e9', text: '#33691e' },
   ];
 
-  // Basic blocklist — covers common slurs and profanity
-  const BLOCKED = new Set([
-    'fuck','shit','bitch','cunt','cock','dick','pussy','ass','asshole',
-    'nigger','nigga','faggot','fag','kike','spic','chink','gook','wetback',
-    'retard','tranny','whore','slut','bastard','motherfucker','piss','crap'
-  ]);
+  
 
   function isProfane(text) {
     return BLOCKED.has(text.toLowerCase().trim());
