@@ -757,11 +757,10 @@
     { bg: '#f1f8e9', text: '#33691e' },
   ];
 
-  async function isProfane(text) {
+  async function isProfane(word, lang) {
     try {
-      const res = await fetch(`https://www.purgomalum.com/service/containsprofanity?text=${encodeURIComponent(text)}`);
-      const result = await res.text();
-      return result.trim() === 'true';
+      const res = await fetch(`https://www.purgomalum.com/service/containsprofanity?text=${encodeURIComponent(word + ' ' + lang)}`);
+      return (await res.text()).trim() === 'true';
     } catch {
       return true;
     }
@@ -799,14 +798,20 @@
     const word = document.getElementById('word-input').value.trim();
     const lang = document.getElementById('lang-input').value.trim();
     if (!word || !lang) return;
-    if (await isProfane(word) || await isProfane(lang)) {
+    const btn = document.querySelector('.word-board-form button');
+    btn.disabled = true;
+    btn.textContent = 'Checking…';
+    if (await isProfane(word, lang)) {
       alert('That word isn\'t allowed here. Please keep it kind!');
+      btn.disabled = false;
+      btn.textContent = 'Add it →';
       return;
     }
     db.ref('words').push({ word, language: lang });
     sessionStorage.setItem('word_submitted', 'true');
     document.getElementById('word-input').value = '';
     document.getElementById('lang-input').value = '';
+    btn.textContent = 'Added!';
   }
 
   document.getElementById('word-input').addEventListener('keydown', e => {
