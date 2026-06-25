@@ -378,7 +378,7 @@
         PhD Student, Operations Management<br>
         <a href="https://www.marshall.usc.edu/">USC Marshall School of Business</a><br>
         Advised by <a href="https://faculty.marshall.usc.edu/Andrew-Daw/">Andrew Daw</a>
-        and <a href="https://yalimohammadi.github.io/">Yeganeh Alimohammadi</a>
+        and <a href="https://yalimohammadi.github.io/">Yeganeh Almohammadi</a>
       </div>
       <div class="hero-links">
         <a href="cv.pdf" target="_blank">CV</a>
@@ -396,7 +396,7 @@
       <a href="https://www.marshall.usc.edu/">USC Marshall School of Business</a>,
       where I'm fortunate to be advised by
       <a href="https://faculty.marshall.usc.edu/Andrew-Daw/">Andrew Daw</a> and
-      <a href="https://yalimohammadi.github.io/">Yeganeh Alimohammadi</a>.
+      <a href="https://yalimohammadi.github.io/">Yeganeh Almohammadi</a>.
     </p>
     <p>
       Recently I've been working on projects related to stochastic processes and formal
@@ -757,10 +757,14 @@
     { bg: '#f1f8e9', text: '#33691e' },
   ];
 
-  
-
-  function isProfane(text) {
-    return BLOCKED.has(text.toLowerCase().trim());
+  async function isProfane(text) {
+    try {
+      const res = await fetch(`https://www.purgomalum.com/service/containsprofanity?text=${encodeURIComponent(text)}`);
+      const result = await res.text();
+      return result.trim() === 'true';
+    } catch {
+      return true;
+    }
   }
 
   function colorFor(key) {
@@ -787,7 +791,7 @@
     document.getElementById('word-board').appendChild(chip);
   });
 
-  function submitWord() {
+  async function submitWord() {
     if (sessionStorage.getItem('word_submitted')) {
       alert('You\'ve already added a word — thanks for contributing!');
       return;
@@ -795,7 +799,7 @@
     const word = document.getElementById('word-input').value.trim();
     const lang = document.getElementById('lang-input').value.trim();
     if (!word || !lang) return;
-    if (isProfane(word) || isProfane(lang)) {
+    if (await isProfane(word) || await isProfane(lang)) {
       alert('That word isn\'t allowed here. Please keep it kind!');
       return;
     }
